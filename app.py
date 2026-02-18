@@ -10,7 +10,7 @@ import time
 model = tf.keras.models.load_model("pneumonia_model_final.keras")
 
 # =============================
-# Page Config
+# Page Configuration
 # =============================
 st.set_page_config(
     page_title="AI Pneumonia Detection",
@@ -18,8 +18,52 @@ st.set_page_config(
     layout="centered"
 )
 
+# =============================
+# Sidebar
+# =============================
+st.sidebar.title("📌 Project Information")
+
+st.sidebar.markdown("""
+### 🧠 Project Title
+AI-Based Pneumonia Detection Using Deep Learning  
+
+### 🏗 Model Architecture
+MobileNetV2 (Transfer Learning)
+
+### 📊 Final Test Accuracy
+94.7%   *(Update with your real accuracy)*
+
+### 👩‍💻 Project Team
+
+**Ghadeer Ahmad Ghatasha**
+- Application Development & Model Implementation  
+- Literature Review & Medical Background Research  
+- Documentation & Report Writing  
+
+**Rasha Nayef Almashni**
+- Literature Review & Medical Background Research  
+- Documentation & Report Writing
+
+**Rana Fakhri Shalalda**
+- Literature Review & Medical Background Research  
+- Documentation & Report Writing 
+
+### 👨‍🏫 Supervisor
+Dr. Bassam Arqoub  
+
+### 📅 Year
+2026
+""")
+
+# =============================
+# Main Title
+# =============================
 st.title("🩺 AI-Based Pneumonia Detection System")
 st.markdown("### Chest X-ray Classification using Deep Learning")
+
+st.markdown(
+    "Developed as a Graduation Project in Artificial Intelligence."
+)
 
 st.write(
     "Upload a chest X-ray image and the AI model will classify it."
@@ -32,6 +76,9 @@ st.info(
 
 st.divider()
 
+# =============================
+# Upload Image
+# =============================
 uploaded_file = st.file_uploader(
     "📤 Upload Chest X-ray Image",
     type=["jpg", "png", "jpeg"]
@@ -66,12 +113,12 @@ if uploaded_file is not None:
         # 3-Level Decision System
         # =============================
 
-        if confidence >= 0.70:
+        if confidence >= 0.75:
             st.error("🦠 Pneumonia Detected")
             st.write(f"Confidence: **{confidence * 100:.2f}%**")
             st.progress(int(confidence * 100))
 
-        elif confidence <= 0.40:
+        elif confidence <= 0.35:
             st.success("✅ Normal")
             normal_conf = 1 - confidence
             st.write(f"Confidence: **{normal_conf * 100:.2f}%**")
