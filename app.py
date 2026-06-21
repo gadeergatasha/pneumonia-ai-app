@@ -104,8 +104,8 @@ st.sidebar.title("Project Information")
 
 st.sidebar.markdown("""
 ### Project Title
-Deep Learning-Based Detection of Pneumonia in Pediatric Chest Radiographs  
-*A Validation Study Using Cases Collected from Hebron City*
+Design and Development of an Artificial Intelligence-Based System for Automated Detection and Classification of Pneumonia in Chest X-ray Images  
+*A Validation Study Using Cases Collected from Hebron City, Palestine*
 
 ### Model Architecture
 MobileNetV2 (Transfer Learning)
@@ -121,17 +121,17 @@ MobileNetV2 (Transfer Learning)
 - Rana Fakhri Shalalda
 
 ### Supervisor
-Dr. Bassam Arqoub
+Dr. Bassam Abu Arqoub
 
 ### Year
-2026
+2025-2026
 """)
 
 # =============================
 # Main UI
 # =============================
 st.title("🩺 PneumoRay")
-st.markdown("### Deep Learning-Based Detection of Pneumonia in Pediatric Chest Radiographs")
+st.markdown("### Design and Development of an Artificial Intelligence-Based System for Automated Detection and Classification of Pneumonia in Chest X-ray Images")
 st.markdown("Developed as a Graduation Project in Medical Imaging.")
 
 st.info(
